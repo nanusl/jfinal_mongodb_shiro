@@ -41,7 +41,10 @@ JFinal_MongoDB_Shiro_Demo
     * 权限标识：addUser、showUser、editUser、deleteUser
     
 ## 资料
+       这个Demo参考了大量资料与代码，难免有BUG，欢迎大家修改，没有版权。
     * MongDB插件中文文档 https://t-baby.gitbooks.io/mongodb-plugin/
     * jfianl整合shiro
         * https://my.oschina.net/myaniu/blog/137198
         * https://my.oschina.net/myaniu/blog/137205
+        * http://jinnianshilongnian.iteye.com/blog/2018398
+                                                    ...(其他)
