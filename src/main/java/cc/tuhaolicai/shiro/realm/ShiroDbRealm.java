@@ -36,6 +36,8 @@ public class ShiroDbRealm extends AuthorizingRealm {
 
     /**
      * 认证回调函数,登录时调用.
+     * 登录时在触发：Subject对象的logout()方法时会调用该方法
+     * 该逻辑完成后调用自定义密码校验
      */
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
         SimpleUsernamePasswordToken authcToken = (SimpleUsernamePasswordToken) token;
@@ -56,6 +58,8 @@ public class ShiroDbRealm extends AuthorizingRealm {
 
     /**
      * 授权查询回调函数, 进行鉴权但缓存中无用户的授权信息时调用.
+     * 用户权限不止数据库中的权限，
+     * 在ShiroKit对象中authzMaps属性中也会有相对的注解处理的权限
      */
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         User user1 = (User) principals.fromRealm(getName()).iterator().next();
